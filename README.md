@@ -32,7 +32,7 @@ I'm a passionate student focused on software development, with interests in web 
 
 ### 📈 GitHub Stats
 
-![Esteban's GitHub Stats](https://github-readme-stats.vercel.app/api?username=eparajeles&show_icons=true&theme=default)
+![Esteban's GitHub Stats](https://github-readme-stats.vercel.app/api?username=TosickOne&show_icons=true&theme=default)
 
 ---
 
