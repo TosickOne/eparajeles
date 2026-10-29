@@ -1,0 +1,62 @@
+[mod]
+id = "spawn_animations"
+version = "0.1.0"
+priority = 100
+
+[compatibility]
+horizon_revision = "c9d61dcab7a64e4aee9385414686f1bcd420e362"
+
+[[module]]
+id = "engine"
+file = "crates/horizon-client/src/mobs/render.rs"
+name = "spawn_animations_engine"
+source = "engine.rs"
+
+[[module]]
+id = "runtime"
+file = "crates/horizon-client/src/mobs/render.rs"
+name = "spawn_animations"
+source = "runtime.rs"
+visibility = "pub"
+
+[[module]]
+id = "game"
+file = "crates/horizon-client/src/game.rs"
+name = "spawn_animations"
+source = "game.rs"
+
+[[injection]]
+id = "render"
+kind = "HEAD"
+cancellable = true
+target = "horizon_client::mobs::render::render_with"
+helper = "render.rs"
+bindings = [
+  { name = "m", ty = "&Mob", value = "m" },
+  { name = "alpha", ty = "f32", value = "alpha" },
+  { name = "camera", ty = "glam::DVec3", value = "camera" },
+  { name = "atlas", ty = "Atlas", value = "atlas" },
+  { name = "light", ty = "u32", value = "light" },
+  { name = "data", ty = "&MobData", value = "data" },
+  { name = "extra", ty = "&[(&Part, [f32; 4], u32)]", value = "extra" },
+  { name = "out", ty = "&mut Vec<Vertex>", value = "&mut *out" },
+]
+
+[[injection]]
+id = "spawned"
+kind = "HEAD"
+target = "horizon_client::game::natural_spawning::Game<'_>::add_spawned"
+helper = "spawned.rs"
+bindings = [
+  { name = "game", ty = "&mut crate::game::Game<'_>", value = "&mut *self" },
+  { name = "count", ty = "usize", value = "pending.len()" },
+]
+
+[[injection]]
+id = "mods"
+kind = "HEAD"
+target = "horizon_client::game::native_hooks::Game<'_>::native_mods"
+helper = "mods.rs"
+bindings = [
+  { name = "mods", ty = "&mut Vec<crate::game::native_hooks::NativeMod>", value = "&mut *mods" },
+]

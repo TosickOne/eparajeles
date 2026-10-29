@@ -17,6 +17,7 @@ Every bundle in `mixins/` is pinned to Horizon `c9d61dc` (2026-10-29), so they a
 | `mixins/ambient-sounds` | AmbientSounds | A reduced version: with the jar's assets in the game (mod browser), it reads the mod's regions (`basic/regions/*.json`: biomes, caves by sky light, rain, day or night, bad regions) and every 30 to 60 s plays one of the active regions' sounds around you. The mod's continuous loops and fades, air pockets, block features, heights, underwater, time curves and dimension files are not ported. | Written, not built against Horizon yet |
 | `mixins/camera-overhaul` | CameraOverhaul | The camera rolls as you strafe and turn and pitches as you jump, fall and move forward, eased each frame, on top of the view bob. Explosion shake, idle sway and the mod's settings are not ported; the strengths are constants in `engine.rs`. | Written, not built against Horizon yet |
 | `mixins/first-person` | First-person Model | In first person your own body (with its armour and held items) shows when you look down, drawn 0.35 blocks behind the eye so the head stays out of view. The first-person hand still draws as well, and the mod's settings and per-item hiding are not ported. | Written, not built against Horizon yet |
+| `mixins/spawn-animations` | Spawn Animations | Single player: mobs that natural spawning adds climb out of the ground over their first second (drawn lower, easing up). Mobs from spawners, eggs and commands, the dust particles and the mod's settings are not ported. | Written, not built against Horizon yet |
 
 Not ported, on purpose:
 
