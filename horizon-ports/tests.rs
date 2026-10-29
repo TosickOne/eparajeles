@@ -14,3 +14,5 @@ pub mod ambient_sounds;
 pub mod camera_overhaul;
 #[path = "mixins/spawn-animations/engine.rs"]
 pub mod spawn_animations;
+#[path = "mixins/visuality/engine.rs"]
+pub mod visuality;

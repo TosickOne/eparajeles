@@ -18,6 +18,7 @@ Every bundle in `mixins/` is pinned to Horizon `c9d61dc` (2026-10-29), so they a
 | `mixins/camera-overhaul` | CameraOverhaul | The camera rolls as you strafe and turn and pitches as you jump, fall and move forward, eased each frame, on top of the view bob. Explosion shake, idle sway and the mod's settings are not ported; the strengths are constants in `engine.rs`. | Written, not built against Horizon yet |
 | `mixins/first-person` | First-person Model | In first person your own body (with its armour and held items) shows when you look down, drawn 0.35 blocks behind the eye so the head stays out of view. The first-person hand still draws as well, and the mod's settings and per-item hiding are not ported. | Written, not built against Horizon yet |
 | `mixins/spawn-animations` | Spawn Animations | Single player: mobs that natural spawning adds climb out of the ground over their first second (drawn lower, easing up). Mobs from spawners, eggs and commands, the dust particles and the mod's settings are not ported. | Written, not built against Horizon yet |
+| `mixins/visuality` | Visuality | A reduced version with vanilla's particle types (Horizon has no way to add new ones yet): glints on amethyst, souls rising from open soul sand and soil, splashes where rain hits open water, sampled around you each tick. The mod's own particle textures, hit particles (bones, feathers), slime blobs and settings are not ported. | Written, not built against Horizon yet |
 
 Not ported, on purpose:
 
