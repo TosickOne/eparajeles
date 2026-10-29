@@ -8,3 +8,5 @@ pub mod waystones;
 pub mod sounds;
 #[path = "mixins/presence-footsteps/engine.rs"]
 pub mod presence_footsteps;
+#[path = "mixins/ambient-sounds/engine.rs"]
+pub mod ambient_sounds;
