@@ -18,3 +18,5 @@ pub mod spawn_animations;
 pub mod visuality;
 #[path = "mixins/not-enough-animations/engine.rs"]
 pub mod not_enough_animations;
+#[path = "mixins/punchy/engine.rs"]
+pub mod punchy;

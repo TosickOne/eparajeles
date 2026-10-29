@@ -1,0 +1,39 @@
+[mod]
+id = "punchy"
+version = "0.1.0"
+priority = 100
+
+[compatibility]
+horizon_revision = "c9d61dcab7a64e4aee9385414686f1bcd420e362"
+
+[[module]]
+id = "engine"
+file = "crates/horizon-client/src/game.rs"
+name = "punchy_engine"
+source = "engine.rs"
+
+[[module]]
+id = "runtime"
+file = "crates/horizon-client/src/game.rs"
+name = "punchy"
+source = "runtime.rs"
+
+[[injection]]
+id = "hand"
+kind = "HEAD"
+cancellable = true
+target = "horizon_client::game::Game<'_>::hand_geometry"
+helper = "hand.rs"
+bindings = [
+  { name = "game", ty = "&mut crate::game::Game<'_>", value = "&mut *self" },
+  { name = "alpha", ty = "f64", value = "alpha" },
+]
+
+[[injection]]
+id = "mods"
+kind = "HEAD"
+target = "horizon_client::game::native_hooks::Game<'_>::native_mods"
+helper = "mods.rs"
+bindings = [
+  { name = "mods", ty = "&mut Vec<crate::game::native_hooks::NativeMod>", value = "&mut *mods" },
+]

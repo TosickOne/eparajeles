@@ -20,6 +20,7 @@ Every bundle in `mixins/` is pinned to Horizon `c9d61dc` (2026-10-29), so they a
 | `mixins/spawn-animations` | Spawn Animations | Single player: mobs that natural spawning adds climb out of the ground over their first second (drawn lower, easing up). Mobs from spawners, eggs and commands, the dust particles and the mod's settings are not ported. | Written, not built against Horizon yet |
 | `mixins/visuality` | Visuality | A reduced version with vanilla's particle types (Horizon has no way to add new ones yet): glints on amethyst, souls rising from open soul sand and soil, splashes where rain hits open water, sampled around you each tick. The mod's own particle textures, hit particles (bones, feathers), slime blobs and settings are not ported. | Written, not built against Horizon yet |
 | `mixins/not-enough-animations` | Not Enough Animations | Two of its third-person poses, for every player model (yours in F5, others on servers): the arm comes up to the mouth with a bite bob while eating or drinking, and both arms hold a filled map out in front. Its ladder, rowing, lantern, sleeping and other poses and its settings are not ported. | Written, not built against Horizon yet |
+| `mixins/punchy` | Punchy! | In first person your main-hand arm shows under the item it holds, swinging with it as the empty arm does (not with drawn bows, crossbows, raised tridents and spears, or maps). Its tool-specific animations (the hoe and others) and settings are not ported. | Written, not built against Horizon yet |
 
 Not ported, on purpose:
 
