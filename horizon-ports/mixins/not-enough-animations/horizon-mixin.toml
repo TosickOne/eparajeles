@@ -1,0 +1,33 @@
+[mod]
+id = "not_enough_animations"
+version = "0.1.0"
+priority = 100
+
+[compatibility]
+horizon_revision = "c9d61dcab7a64e4aee9385414686f1bcd420e362"
+
+[[module]]
+id = "engine"
+file = "crates/horizon-client/src/mobs/anim.rs"
+name = "not_enough_animations_engine"
+source = "engine.rs"
+
+[[module]]
+id = "runtime"
+file = "crates/horizon-client/src/mobs/anim.rs"
+name = "not_enough_animations"
+source = "runtime.rs"
+
+# Every model's pose set-up; players' get the extra poses on top.
+[[injection]]
+id = "pose"
+kind = "HEAD"
+cancellable = true
+target = "horizon_client::mobs::anim::setup"
+helper = "setup.rs"
+bindings = [
+  { name = "m", ty = "&Mob", value = "m" },
+  { name = "s", ty = "&State", value = "s" },
+  { name = "p", ty = "&mut Poses", value = "&mut *p" },
+  { name = "w_anims", ty = "&HashMap<String, super::keyframes::Animation>", value = "w_anims" },
+]

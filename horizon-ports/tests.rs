@@ -16,3 +16,5 @@ pub mod camera_overhaul;
 pub mod spawn_animations;
 #[path = "mixins/visuality/engine.rs"]
 pub mod visuality;
+#[path = "mixins/not-enough-animations/engine.rs"]
+pub mod not_enough_animations;
