@@ -1,0 +1,10 @@
+[package]
+name = "horizon-ports"
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+publish = false
+description = "Tests for the pure logic of the native Horizon ports in mixins/"
+
+[lib]
+path = "tests.rs"
