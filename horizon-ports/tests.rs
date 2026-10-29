@@ -20,3 +20,5 @@ pub mod visuality;
 pub mod not_enough_animations;
 #[path = "mixins/punchy/engine.rs"]
 pub mod punchy;
+#[path = "mixins/skin-layers/engine.rs"]
+pub mod skin_layers;
