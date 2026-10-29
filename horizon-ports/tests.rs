@@ -6,3 +6,5 @@ pub mod sorted;
 pub mod waystones;
 #[path = "mixins/sounds/engine.rs"]
 pub mod sounds;
+#[path = "mixins/presence-footsteps/engine.rs"]
+pub mod presence_footsteps;

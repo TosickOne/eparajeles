@@ -1,0 +1,56 @@
+[mod]
+id = "presence_footsteps"
+version = "0.1.0"
+priority = 100
+
+[compatibility]
+horizon_revision = "c9d61dcab7a64e4aee9385414686f1bcd420e362"
+
+[[module]]
+id = "engine"
+file = "crates/horizon-client/src/audio.rs"
+name = "presence_footsteps_engine"
+source = "engine.rs"
+
+[[module]]
+id = "runtime"
+file = "crates/horizon-client/src/audio.rs"
+name = "presence_footsteps"
+source = "runtime.rs"
+visibility = "pub"
+
+[[module]]
+id = "game"
+file = "crates/horizon-client/src/game.rs"
+name = "presence_footsteps"
+source = "game.rs"
+
+# Every sound goes through `Audio::play`; the player's step is swapped there.
+[[injection]]
+id = "play"
+kind = "HEAD"
+cancellable = true
+target = "horizon_client::audio::Audio::play"
+helper = "play.rs"
+bindings = [
+  { name = "audio", ty = "&mut crate::audio::Audio", value = "&mut *self" },
+  { name = "event", ty = "&str", value = "event" },
+  { name = "at", ty = "Option<[f64; 3]>", value = "at" },
+]
+
+# After the player's movement, before this tick's step sounds play.
+[[injection]]
+id = "step"
+kind = "HEAD"
+target = "horizon_client::game::fov::Game<'_>::tick_avatar"
+helper = "step.rs"
+bindings = [{ name = "game", ty = "&mut crate::game::Game<'_>", value = "&mut *self" }]
+
+[[injection]]
+id = "mods"
+kind = "HEAD"
+target = "horizon_client::game::native_hooks::Game<'_>::native_mods"
+helper = "mods.rs"
+bindings = [
+  { name = "mods", ty = "&mut Vec<crate::game::native_hooks::NativeMod>", value = "&mut *mods" },
+]
