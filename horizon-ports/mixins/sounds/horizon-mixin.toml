@@ -1,0 +1,31 @@
+[mod]
+id = "sounds"
+version = "0.1.0"
+priority = 100
+
+[compatibility]
+horizon_revision = "c9d61dcab7a64e4aee9385414686f1bcd420e362"
+
+[[module]]
+id = "engine"
+file = "crates/horizon-items/src/blocks.rs"
+name = "sounds_engine"
+source = "engine.rs"
+
+[[module]]
+id = "runtime"
+file = "crates/horizon-items/src/blocks.rs"
+name = "sounds_mod"
+source = "runtime.rs"
+
+# The game decodes its block facts here once (`load_with_projection`); the
+# mod's events replace vanilla's in each state's sounds before anything reads them.
+[[injection]]
+id = "facts"
+kind = "RETURN"
+target = "horizon_items::blocks::BlockFacts::load_with_projection"
+helper = "facts.rs"
+bindings = [
+  { name = "value", ty = "Result<(BlockFacts, Vec<GameplayProjection>)>", value = "$value" },
+  { name = "root", ty = "&std::path::Path", value = "root" },
+]

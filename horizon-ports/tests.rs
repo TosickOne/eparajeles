@@ -4,3 +4,5 @@
 pub mod sorted;
 #[path = "mixins/waystones/engine.rs"]
 pub mod waystones;
+#[path = "mixins/sounds/engine.rs"]
+pub mod sounds;
