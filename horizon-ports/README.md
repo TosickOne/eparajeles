@@ -15,6 +15,11 @@ Every bundle in `mixins/` is pinned to Horizon `c9d61dc` (2026-10-29), so they a
 | `mixins/sounds` | Sounds | With the Sounds jar's assets in the game (carried over by the mod browser), every vanilla block the mod has sounds for uses them to break, step, be placed, hit and land on. Its 120 replacements of vanilla sound files work as a resource pack: put the jar in `resourcepacks/`. Its UI, item and container sounds (opening screens, picking up items...) and its shared `*_object` sets are not wired up yet. | Written, not built against Horizon yet |
 | `mixins/presence-footsteps` | Presence Footsteps | With the jar's assets in the game (mod browser), your own steps play the mod's acoustics for the block underfoot (its `blockmap.json` by block id, else `primitivemap.json` by the block's step sound), walk or run. Other players' and mobs' steps, landing and jumping sounds, block tags and sub-states in the blockmap, delayed parts and the mod's volume settings are not ported yet. | Written, not built against Horizon yet |
 | `mixins/ambient-sounds` | AmbientSounds | A reduced version: with the jar's assets in the game (mod browser), it reads the mod's regions (`basic/regions/*.json`: biomes, caves by sky light, rain, day or night, bad regions) and every 30 to 60 s plays one of the active regions' sounds around you. The mod's continuous loops and fades, air pockets, block features, heights, underwater, time curves and dimension files are not ported. | Written, not built against Horizon yet |
+| `mixins/camera-overhaul` | CameraOverhaul | The camera rolls as you strafe and turn and pitches as you jump, fall and move forward, eased each frame, on top of the view bob. Explosion shake, idle sway and the mod's settings are not ported; the strengths are constants in `engine.rs`. | Written, not built against Horizon yet |
+
+Not ported, on purpose:
+
+- **Matcha Flavoured** has no code: it is a data pack and a resource pack in a jar. Install it from the launcher's mod browser; how much of it works is Horizon's data pack support (functions, predicates and item modifiers today; not yet its recipes, loot tables, advancements, villager trades or worldgen, which go under `data/minecraft/`).
 
 ## Build and play
 

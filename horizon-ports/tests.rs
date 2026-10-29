@@ -10,3 +10,5 @@ pub mod sounds;
 pub mod presence_footsteps;
 #[path = "mixins/ambient-sounds/engine.rs"]
 pub mod ambient_sounds;
+#[path = "mixins/camera-overhaul/engine.rs"]
+pub mod camera_overhaul;
