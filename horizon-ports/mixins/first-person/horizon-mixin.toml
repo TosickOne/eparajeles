@@ -1,0 +1,45 @@
+[mod]
+id = "first_person"
+version = "0.1.0"
+priority = 100
+
+[compatibility]
+horizon_revision = "c9d61dcab7a64e4aee9385414686f1bcd420e362"
+
+[[module]]
+id = "runtime"
+file = "crates/horizon-client/src/game.rs"
+name = "first_person"
+source = "runtime.rs"
+
+[[injection]]
+id = "shown"
+kind = "RETURN"
+target = "horizon_client::game::perspective::Game<'_>::player_model_shown"
+helper = "shown.rs"
+bindings = [
+  { name = "value", ty = "bool", value = "$value" },
+  { name = "game", ty = "&crate::game::Game<'_>", value = "&*self" },
+]
+
+[[injection]]
+id = "geometry"
+kind = "HEAD"
+cancellable = true
+target = "horizon_client::game::perspective::Game<'_>::player_model_geometry"
+helper = "geometry.rs"
+bindings = [
+  { name = "game", ty = "&crate::game::Game<'_>", value = "&*self" },
+  { name = "camera", ty = "glam::DVec3", value = "camera" },
+  { name = "alpha", ty = "f64", value = "alpha" },
+  { name = "out", ty = "&mut Vec<horizon_client::mesher::Vertex>", value = "&mut *out" },
+]
+
+[[injection]]
+id = "mods"
+kind = "HEAD"
+target = "horizon_client::game::native_hooks::Game<'_>::native_mods"
+helper = "mods.rs"
+bindings = [
+  { name = "mods", ty = "&mut Vec<crate::game::native_hooks::NativeMod>", value = "&mut *mods" },
+]
