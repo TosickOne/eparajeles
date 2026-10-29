@@ -11,6 +11,7 @@ Every bundle in `mixins/` is pinned to Horizon `c9d61dc` (2026-10-29), so they a
 |---|---|---|---|
 | `mixins/sorted` | Sorted | Quick Stack: **G** (rebindable in Options > Mods) in an open chest, barrel, ender chest or shulker box moves the main inventory's stacks of items the container already holds into it. Sorting is Horizon's own extra (Options > Extras). | Written, not built against Horizon yet |
 | `mixins/world-map` | Xaero's World Map | **M** (rebindable) opens a big north-up map over the HUD of every chunk you have seen in this world and dimension; the wheel zooms. Saved every 30 s under `horizon-mods/.horizon-mod-data/world_map/<world>/`. On servers it lasts for the session only. No panning, waypoints or cave mode yet; the Nether shows its floor below y 100. | Written, not built against Horizon yet |
+| `mixins/waystones` | Waystones | Single player: using a waystone block (the blocks come from the Waystones jar, carried over by the launcher's mod browser) activates it and lists the activated ones in chat; `/waystones <n>` while standing by an activated waystone travels to the n-th, in front of it, in any dimension. No menu, names, XP cost, scrolls, sharestones or warp plates yet. | Written, not built against Horizon yet |
 
 ## Build and play
 
