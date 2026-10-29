@@ -22,3 +22,5 @@ pub mod not_enough_animations;
 pub mod punchy;
 #[path = "mixins/skin-layers/engine.rs"]
 pub mod skin_layers;
+#[path = "mixins/armor-3d/engine.rs"]
+pub mod armor_3d;
